@@ -20,8 +20,8 @@ namespace ASP.NETproductWebPage.Controllers
 
             product.Add(new ProductsModel { Name = "Apple", Description = "Grows on a tree.", Price = 10 });
             product.Add(new ProductsModel { Name = "Banana", Description = "Do I eat the yellow part?", Price = 2 });
-            product.Add(new ProductsModel { Name = "Orange", Description = "Nature's candy.", Price = 2.75F });
-            product.Add(new ProductsModel { Name = "Kiwi", Description = "The fuzzy skin is really not that bad.", Price = 3.05F });
+            product.Add(new ProductsModel { Name = "Orange", Description = "Nature's candy.", Price = 2.75m });
+            product.Add(new ProductsModel { Name = "Kiwi", Description = "The fuzzy skin is really not that bad.", Price = 3.05m });
 
             return View(product);
         }

@@ -1,7 +1,42 @@
 ﻿
 @{
-    ViewBag.Title = "Products";
+    ViewBag.Title = "Our Food";
 }
 
-<h2>Default product view</h2>
+@using ASP.NETproductWebPage.Models
+@model ProductsModel
 
+<h2>Our Food!!</h2>
+
+<div class="container">
+    <div class="row">
+        @using (Html.BeginForm("Edit", "Demo", FormMethod.Post))
+        {
+            <div class="form-group">
+                @Html.LabelFor(x => x.Name)
+                @Html.TextBoxFor(x => x.Name, new { @class = "form-control", placeholder = "Enter Product name" })
+                @Html.ValidationMessageFor(x => x.Name, "Please enter a valid Product name.", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.Description)
+                @Html.TextBoxFor(x => x.Description, new { @class = "form-control", placeholder = "Enter middle name" })
+                @Html.ValidationMessageFor(x => x.Description, "Please enter a valid middle name.", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.Price)
+                @Html.TextBoxFor(x => x.Price, new { @class = "form-control", placeholder = "Enter last name" })
+                @Html.ValidationMessageFor(x => x.Price, "Please enter a valid last name.", new { @class = "text-danger" })
+            </div>
+            @*<div class="form-group">
+                @Html.CheckBoxFor(x => x.IsActive, new { @class = "form-check-input", placeholder = "Enter last name" })
+                @Html.LabelFor(x => x.IsActive, new { @class = "form-check-label" })
+                @Html.ValidationMessageFor(x => x.IsActive)
+            </div>*@
+
+            <button type="submit" class="btn-success">Submit</button>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
