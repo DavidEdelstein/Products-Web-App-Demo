@@ -9,12 +9,12 @@ namespace ASP.NETproductWebPage.Controllers
 {
     public class ProductController : Controller
     {
-        public ActionResult Index()
+        public ActionResult AddProduct()
         {
             return View();
         }
 
-        public ActionResult ListProducts()
+        public ActionResult ListProducts(ProductsModel model)
         {
             List<ProductsModel> product = new List<ProductsModel>();
 
@@ -24,6 +24,18 @@ namespace ASP.NETproductWebPage.Controllers
             product.Add(new ProductsModel { Name = "Kiwi", Description = "The fuzzy skin is really not that bad.", Price = 3.05m });
 
             return View(product);
+        }
+
+        [HttpPost]
+        public ActionResult Add(ProductsModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                // Maybe save this?
+                return RedirectToRoute(new { controller = "Home", action = "Index" });
+            }
+
+            return View("AddProduct", model);
         }
     }
 }
