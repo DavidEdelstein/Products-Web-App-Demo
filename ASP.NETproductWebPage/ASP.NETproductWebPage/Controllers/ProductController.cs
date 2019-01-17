@@ -32,9 +32,11 @@ namespace ASP.NETproductWebPage.Controllers
             if (ModelState.IsValid)
             {
                 // Maybe save this?
+                Session["Last Saved"] = DateTime.Now.ToShortTimeString();
+                TempData["EditResult"] = "Data Succesfully saved";
                 return RedirectToRoute(new { controller = "Home", action = "Index" });
             }
-
+            Response.SetCookie
             return View("AddProduct", model);
         }
     }

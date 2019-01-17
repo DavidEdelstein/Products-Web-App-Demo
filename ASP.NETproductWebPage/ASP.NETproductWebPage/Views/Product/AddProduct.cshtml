@@ -1,12 +1,14 @@
 ﻿
 @{
-    ViewBag.Title = "Our Food";
+    ViewBag.Title = "Our Food!!";
+    ViewBag.AnotherText = "Hello Bro";
 }
 
 @using ASP.NETproductWebPage.Models
 @model ProductsModel
 
-<h2>Our Food!!</h2>
+<h1>@ViewBag.AnotherText</h1>
+<h2>@ViewBag.Title</h2>
 
 <div class="container">
     <div class="row">
@@ -21,12 +23,12 @@
          <div class="form-group">
             @Html.LabelFor(x => x.Description)
             @Html.TextBoxFor(x => x.Description, new { @class = "form-control", placeholder = "Enter middle name" })
-            @Html.ValidationMessageFor(x => x.Description, "Please enter a valid middle name.", new { @class = "text-danger" })
+            @Html.ValidationMessageFor(x => x.Description, "", new { @class = "text-danger" })
          </div>
          <div class="form-group">
-            @Html.LabelFor(x => x.Price)
-            @Html.TextBoxFor(x => x.Price, new { @class = "form-control", placeholder = "Enter last name" })
-            @Html.ValidationMessageFor(x => x.Price, "Please enter a valid last name.", new { @class = "text-danger" })
+            @Html.LabelFor(x => x.Price)0
+0            @Html.TextBoxFor(x => x.Price, new { @class = "form-control", placeholder = "Enter last name" })
+            @Html.ValidationMessageFor(x => x.Price, "", new { @class = "text-danger" })
          </div>
             
 
